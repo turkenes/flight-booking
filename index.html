@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlightSearch – Book Cheap Flights</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========== 1. HEADER & NAVIGATION ========== -->
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <a href="#" class="logo">
+        <img src="images/logo.png" alt="FlightSearch logo">
+        <span>Flight<strong>Search</strong></span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="#" class="active">Flight Tickets</a></li>
+          <li><a href="#">Hotels</a></li>
+          <li><a href="#">Bus Tickets</a></li>
+          <li><a href="#">Car Rental</a></li>
+          <li><a href="#">Transfers</a></li>
+          <li><a href="#">Campaigns</a></li>
+          <li><a href="#">Help</a></li>
+        </ul>
+      </nav>
+
+      <div class="auth-buttons">
+        <a href="#" class="btn btn-ghost">Log In</a>
+        <a href="#" class="btn btn-primary">Sign Up</a>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+    <!-- ========== 2. FLIGHT SEARCH SECTION ========== -->
+    <section class="hero">
+      <div class="container">
+
+        <div class="hero-text">
+          <h1>Where would you like to <span>fly</span> next?</h1>
+          <p>Compare hundreds of airlines and find the best price for your trip.</p>
+        </div>
+
+        <form class="search-form" action="#">
+
+          <!-- Uçuş tipi + non-stop -->
+          <div class="form-top">
+            <fieldset class="trip-type">
+              <legend class="sr-only">Flight type</legend>
+
+              <label class="trip-option">
+                <input type="radio" name="trip" value="one-way">
+                <span>One Way</span>
+              </label>
+              <label class="trip-option">
+                <input type="radio" name="trip" value="round-trip" checked>
+                <span>Round Trip</span>
+              </label>
+              <label class="trip-option">
+                <input type="radio" name="trip" value="multi-city">
+                <span>Multi-City</span>
+              </label>
+            </fieldset>
+
+            <label class="nonstop">
+              <input type="checkbox" name="nonstop">
+              Non-stop flights only
+            </label>
+          </div>
+
+          <!-- Uçuş bilgileri -->
+          <div class="form-fields">
+            <div class="field">
+              <label for="from">From</label>
+              <input type="text" id="from" name="from" list="airports" placeholder="Istanbul (IST)">
+            </div>
+
+            <div class="field">
+              <label for="to">To</label>
+              <input type="text" id="to" name="to" list="airports" placeholder="Antalya (AYT)">
+            </div>
+
+            <div class="field">
+              <label for="departure">Departure Date</label>
+              <input type="date" id="departure" name="departure">
+            </div>
+
+            <div class="field">
+              <label for="return">Return Date</label>
+              <input type="date" id="return" name="return">
+            </div>
+
+            <div class="field">
+              <label for="passengers">Passengers</label>
+              <select id="passengers" name="passengers">
+                <option>1 Passenger</option>
+                <option>2 Passengers</option>
+                <option>3 Passengers</option>
+                <option>4 Passengers</option>
+                <option>5+ Passengers</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="cabin">Cabin Class</label>
+              <select id="cabin" name="cabin">
+                <option>Economy</option>
+                <option>Premium Economy</option>
+                <option>Business</option>
+                <option>First Class</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Havalimanı önerileri (HTML5 datalist, JS gerekmez) -->
+          <datalist id="airports">
+            <option value="Istanbul (IST)"></option>
+            <option value="Istanbul Sabiha Gökçen (SAW)"></option>
+            <option value="Ankara (ESB)"></option>
+            <option value="Izmir (ADB)"></option>
+            <option value="Antalya (AYT)"></option>
+            <option value="Trabzon (TZX)"></option>
+            <option value="Muğla Dalaman (DLM)"></option>
+            <option value="Bodrum (BJV)"></option>
+          </datalist>
+
+          <button type="submit" class="btn btn-primary btn-search">SEARCH FLIGHTS</button>
+        </form>
+
+      </div>
+    </section>
+
+    <!-- ========== 3. POPULAR FLIGHTS ========== -->
+    <section class="section popular-flights">
+      <div class="container">
+
+        <div class="section-head">
+          <h2>Popular Flights</h2>
+          <p>The most searched domestic routes this week.</p>
+        </div>
+
+        <div class="flight-grid">
+
+          <article class="flight-card">
+            <div class="route">
+              <div class="city"><span class="code">IST</span><span class="name">Istanbul</span></div>
+              <div class="route-line"></div>
+              <div class="city city-to"><span class="code">AYT</span><span class="name">Antalya</span></div>
+            </div>
+            <div class="flight-info">
+              <p><span class="label">Duration</span>1h 20m</p>
+              <p class="price"><span class="label">From</span>€45</p>
+            </div>
+            <a href="#" class="btn btn-outline">View Flight</a>
+          </article>
+
+          <article class="flight-card">
+            <div class="route">
+              <div class="city"><span class="code">IST</span><span class="name">Istanbul</span></div>
+              <div class="route-line"></div>
+              <div class="city city-to"><span class="code">ADB</span><span class="name">Izmir</span></div>
+            </div>
+            <div class="flight-info">
+              <p><span class="label">Duration</span>1h 10m</p>
+              <p class="price"><span class="label">From</span>€40</p>
+            </div>
+            <a href="#" class="btn btn-outline">View Flight</a>
+          </article>
+
+          <article class="flight-card">
+            <div class="route">
+              <div class="city"><span class="code">ESB</span><span class="name">Ankara</span></div>
+              <div class="route-line"></div>
+              <div class="city city-to"><span class="code">IST</span><span class="name">Istanbul</span></div>
+            </div>
+            <div class="flight-info">
+              <p><span class="label">Duration</span>1h 05m</p>
+              <p class="price"><span class="label">From</span>€38</p>
+            </div>
+            <a href="#" class="btn btn-outline">View Flight</a>
+          </article>
+
+          <article class="flight-card">
+            <div class="route">
+              <div class="city"><span class="code">ADB</span><span class="name">Izmir</span></div>
+              <div class="route-line"></div>
+              <div class="city city-to"><span class="code">AYT</span><span class="name">Antalya</span></div>
+            </div>
+            <div class="flight-info">
+              <p><span class="label">Duration</span>1h 15m</p>
+              <p class="price"><span class="label">From</span>€42</p>
+            </div>
+            <a href="#" class="btn btn-outline">View Flight</a>
+          </article>
+
+          <article class="flight-card">
+            <div class="route">
+              <div class="city"><span class="code">IST</span><span class="name">Istanbul</span></div>
+              <div class="route-line"></div>
+              <div class="city city-to"><span class="code">TZX</span><span class="name">Trabzon</span></div>
+            </div>
+            <div class="flight-info">
+              <p><span class="label">Duration</span>1h 45m</p>
+              <p class="price"><span class="label">From</span>€50</p>
+            </div>
+            <a href="#" class="btn btn-outline">View Flight</a>
+          </article>
+
+          <article class="flight-card">
+            <div class="route">
+              <div class="city"><span class="code">AYT</span><span class="name">Antalya</span></div>
+              <div class="route-line"></div>
+              <div class="city city-to"><span class="code">ESB</span><span class="name">Ankara</span></div>
+            </div>
+            <div class="flight-info">
+              <p><span class="label">Duration</span>1h 10m</p>
+              <p class="price"><span class="label">From</span>€39</p>
+            </div>
+            <a href="#" class="btn btn-outline">View Flight</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 4. SPECIAL OFFERS & CAMPAIGNS ========== -->
+    <section class="section campaigns">
+      <div class="container">
+
+        <div class="section-head">
+          <h2>Special Offers &amp; Campaigns</h2>
+          <p>Limited-time deals to make your next trip even more affordable.</p>
+        </div>
+
+        <div class="campaign-grid">
+
+          <article class="campaign-card">
+            <div class="campaign-img">
+              <img src="images/campaign1.jpg" alt="Passengers seated inside an airplane cabin">
+              <span class="badge">15% OFF</span>
+            </div>
+            <div class="campaign-body">
+              <h3>First Flight Discount</h3>
+              <p>Get a special discount on your first flight booked with FlightSearch.</p>
+              <a href="#" class="btn btn-primary">Explore Offer</a>
+            </div>
+          </article>
+
+          <article class="campaign-card">
+            <div class="campaign-img">
+              <img src="images/campaign2.jpg" alt="White houses of Santorini overlooking the blue sea">
+              <span class="badge">Up to 30% OFF</span>
+            </div>
+            <div class="campaign-body">
+              <h3>International Flight Deals</h3>
+              <p>Discover special prices for selected international destinations.</p>
+              <a href="#" class="btn btn-primary">Explore Offer</a>
+            </div>
+          </article>
+
+          <article class="campaign-card">
+            <div class="campaign-img">
+              <img src="images/campaign3.jpg" alt="Three young travelers with backpacks walking toward the mountains">
+              <span class="badge">Students</span>
+            </div>
+            <div class="campaign-body">
+              <h3>Student Offers</h3>
+              <p>Special flight deals and extra baggage allowance for students.</p>
+              <a href="#" class="btn btn-primary">Explore Offer</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 5. WHY CHOOSE US? ========== -->
+    <section class="section why-us">
+      <div class="container">
+
+        <div class="section-head">
+          <h2>Why Choose Us?</h2>
+          <p>Everything you need for a stress-free trip, in one place.</p>
+        </div>
+
+        <div class="feature-grid">
+
+          <article class="feature-card">
+            <div class="feature-icon">
+              <!-- Etiket ikonu (inline SVG) -->
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.6 13.4l-7.2 7.2a2 2 0 0 1-2.8 0L2 12V2h10l8.6 8.6a2 2 0 0 1 0 2.8z"/><circle cx="7" cy="7" r="1.5"/></svg>
+            </div>
+            <h3>Affordable Prices</h3>
+            <p>Compare hundreds of flights and find suitable prices for every budget.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">
+              <!-- Kalkan ikonu -->
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
+            <h3>Secure Booking</h3>
+            <p>Enjoy a safe and reliable booking experience with encrypted payments.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">
+              <!-- Şimşek ikonu -->
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <h3>Fast and Easy</h3>
+            <p>Find and compare flights quickly and book them in just a few steps.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">
+              <!-- Kulaklık ikonu -->
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+            </div>
+            <h3>24/7 Support</h3>
+            <p>Our support team is here to help you any time, day or night.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== 6. FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <!-- Marka sütunu -->
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <img src="images/logo.png" alt="FlightSearch logo">
+            <span>Flight<strong>Search</strong></span>
+          </a>
+          <p>Compare flights from hundreds of airlines and book your next trip at the best price.</p>
+        </div>
+
+        <nav class="footer-col" aria-label="Flight tickets">
+          <h4>Flight Tickets</h4>
+          <ul>
+            <li><a href="#">Domestic Flights</a></li>
+            <li><a href="#">International Flights</a></li>
+            <li><a href="#">Popular Routes</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-col" aria-label="Help">
+          <h4>Help</h4>
+          <ul>
+            <li><a href="#">Frequently Asked Questions</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Cancellation &amp; Refund</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-col" aria-label="Company">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-col" aria-label="Social media">
+          <h4>Follow Us</h4>
+          <ul class="social-links">
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">X</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">LinkedIn</a></li>
+          </ul>
+        </nav>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 FlightSearch – All Rights Reserved.</p>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
