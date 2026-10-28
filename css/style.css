@@ -353,6 +353,17 @@ img {
   background-position: right center;
 }
 
+/* One Way veya Multi-City seçilince dönüş tarihi pasif görünür.
+   :has() = "içinde şu olan" demek; JavaScript gerekmeden
+   seçili radio'ya göre başka bir alanı stillendirebiliyoruz. */
+.search-form:has(input[value="one-way"]:checked) .field-return,
+.search-form:has(input[value="multi-city"]:checked) .field-return {
+  opacity: 0.45;
+  background: #f1f3f8;
+  border-style: dashed;
+  pointer-events: none;      /* tıklanamaz */
+}
+
 /* Büyük arama butonu */
 .btn-search {
   display: block;
